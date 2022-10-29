@@ -1,6 +1,6 @@
 # -25.5.1-HW-04-
 
-Требования (Задание 25.3.1): Написать тест, который проверяет, что на сайте PetFriends (https://petfriends1.herokuapp.com/) на странице со списком питомцев пользователя (https://petfriends1.herokuapp.com/my_pets):
+Требования (Задание 25.3.1): Написать тест, который проверяет, что на сайте PetFriends (https://petfriends.skillfactory.ru) на странице со списком питомцев пользователя (https://petfriends.skillfactory.ru/my_pets):
 
 Присутствуют все питомцы.
 Хотя бы у половины питомцев есть фото.
