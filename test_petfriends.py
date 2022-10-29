@@ -7,9 +7,9 @@ from selenium.webdriver.support import expected_conditions as EC
 
 def test_show_all_pets():
    # Вводим email
-   pytest.driver.find_element_by_id('email').send_keys('a@bk.ru')
+   pytest.driver.find_element_by_id('email').send_keys('kirill.sheregov@gmail.com')
    # Вводим пароль
-   pytest.driver.find_element_by_id('pass').send_keys('12345')
+   pytest.driver.find_element_by_id('pass').send_keys('kirill90')
 
    # Настраиваем неявные ожидания:
    pytest.driver.implicitly_wait(10)
@@ -36,8 +36,8 @@ def test_show_all_pets():
 
 def test_show_my_pets():
    # Вводим email, пароль, открываем главную страницу сайта
-   pytest.driver.find_element_by_id('email').send_keys('a@bk.ru')
-   pytest.driver.find_element_by_id('pass').send_keys('12345')
+   pytest.driver.find_element_by_id('email').send_keys('kirill.sheregov@gmail.com')
+   pytest.driver.find_element_by_id('pass').send_keys('kirill90')
    pytest.driver.find_element_by_css_selector('button[type="submit"]').click()
 
    #Настраиваем переменную явного ожидания:
@@ -47,7 +47,7 @@ def test_show_my_pets():
    # Ожидаем в течение 5с, что на странице есть тег h1 с текстом "PetFriends"
    assert wait.until(EC.text_to_be_present_in_element((By.TAG_NAME,'h1'), "PetFriends"))
 
-   # Открываем страницу /my_pets.
+   # Открываем страницу https://petfriends.skillfactory.ru/my_pets.
    pytest.driver.find_element_by_css_selector('a[href="/my_pets"]').click()
 
    # Проверяем, что мы оказались на  странице пользователя.
@@ -83,7 +83,7 @@ def test_show_my_pets():
    for i in range(len(age_my_pets)):
       assert wait.until(EC.visibility_of(age_my_pets[i]))
 
-   # Ищем на странице /my_pets всю статистику пользователя,
+   # Ищем на странице https://petfriends.skillfactory.ru/my_pets всю статистику пользователя,
    # и вычленяем из полученных данных количество питомцев пользователя:
    all_statistics = pytest.driver.find_element_by_xpath('//div[@class=".col-sm-4 left"]').text.split("\n")
    statistics_pets = all_statistics[1].split(" ")
